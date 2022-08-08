@@ -155,6 +155,7 @@ async function QRCodeExeption(msg) {
  * @param {string} message Message to send to phone number
  * Send message to a phone number
  */
+ var readline = require('readline');
 async function sendTo(phoneOrContact, message) {
     let phone = phoneOrContact;
     if (typeof phoneOrContact === "object") {
@@ -168,8 +169,8 @@ async function sendTo(phoneOrContact, message) {
         await page.waitForSelector(SELECTORS.SEND_BUTTON, { timeout: 5000 });
         await page.keyboard.press("Enter");
         await page.waitFor(1000);
-        process.stdout.clearLine();
-        process.stdout.cursorTo(0);
+        readline.clearLine(process.stdout, 0)
+        readline.cursorTo(process.stdout, 0, null)
         process.stdout.write(`${phone} Sent\n`);
         counter.success++;
     } catch (err) {
