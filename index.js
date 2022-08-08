@@ -1,4 +1,4 @@
-const wbm = require('wbm');
+const wbm = require('nadee');
 const TeleBot = require('telebot');
 wbm.start().then(async () => {
     const phones = ['+94718083058'];
