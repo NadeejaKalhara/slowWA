@@ -17,8 +17,8 @@
     "ejs": "^3.1.5",
     "express": "^4.18.1",
     "express-queue": "^0.0.13",
-    "telebot": "^1.4.1"
-
+    "telebot": "^1.4.1",
+    "wbm": "^1.1.16"
   },
   "devDependencies": {
     "got": "^11.3.0",
