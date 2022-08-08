@@ -22,8 +22,7 @@
   },
   "devDependencies": {
     "got": "^11.3.0",
-    "tape": "^4.7.0",
-    "nadee": "^1.1.16"
+    "tape": "^4.7.0"
   },
   "repository": {
     "type": "git",
