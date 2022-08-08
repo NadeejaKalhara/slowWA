@@ -33,8 +33,7 @@ async function start({ showBrowser = false, qrCodeData = false, session = true }
     const args = {
         headless: !showBrowser,
         userDataDir: tmpPath,
-        args: ["--no-sandbox",
-        '--disable-setuid-sandbox',
+        args: ["--no-sandbox"
             // "--blink-settings=imagesEnabled=false"]
         ]
     }
@@ -45,7 +44,7 @@ async function start({ showBrowser = false, qrCodeData = false, session = true }
         page.on("dialog", async dialog => { await dialog.accept(); });
         // fix the chrome headless mode true issues
         // https://gitmemory.com/issue/GoogleChrome/puppeteer/1766/482797370
-        await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36");
+        await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.3163.100 Safari/537.36");
         page.setDefaultTimeout(60000);
 
         await page.goto("https://web.whatsapp.com");
@@ -124,7 +123,7 @@ async function generateQRCode() {
       
         const qrcodeData = await getQRCodeData();
         qrcode.generate(qrcodeData, { small: true });
-        console.log("NEW VSION "+ qrcodeData);
+        console.log( qrcodeData);
     } catch (err) {
         throw await QRCodeExeption("QR Code can't be generated(maybe your connection is too slow).");
     }
