@@ -25,7 +25,7 @@ const SELECTORS = {
 /**
  * Initialize browser, page and setup page desktop mode
  */
-async function start({ showBrowser = false, qrCodeData = false, session = true } = {}) {
+async function start({ showBrowser = true, qrCodeData = false, session = true } = {}) {
     if (!session) {
         deleteSession(tmpPath);
     }
