@@ -174,8 +174,8 @@ async function sendTo(phoneOrContact, message) {
         process.stdout.write(`${phone} Sent\n`);
         counter.success++;
     } catch (err) {
-        process.stdout.clearLine();
-        process.stdout.cursorTo(0);
+        readline.clearLine(process.stdout, 0)
+        readline.cursorTo(process.stdout, 0, null)
         process.stdout.write(`${phone} Failed\n`);
         counter.fails++;
     }
